@@ -11,17 +11,15 @@
 ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = array (
-	'title' => '',
+	'title' => 'l10n fix for insert record content element',
 	'description' => '',
 	'category' => '',
-	'author' => '',
+	'author' => 'Georg Ringer',
 	'author_email' => '',
 	'shy' => '',
-	'dependencies' => '',
-	'conflicts' => '',
 	'priority' => '',
 	'module' => '',
-	'state' => '',
+	'state' => 'stable',
 	'internal' => '',
 	'uploadfolder' => 0,
 	'createDirs' => '',
@@ -29,11 +27,12 @@ $EM_CONF[$_EXTKEY] = array (
 	'clearCacheOnLoad' => 0,
 	'lockType' => '',
 	'author_company' => '',
-	'version' => '0.0.0',
+	'version' => '1.0.0',
 	'constraints' => 
 	array (
 		'depends' => 
 		array (
+			'typo3' => '6.2.0-6.3.99'
 		),
 		'conflicts' => 
 		array (
