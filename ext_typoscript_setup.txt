@@ -1,7 +1,7 @@
 includeLibs.insertrecordfix = EXT:insertrecordfix/class.user_insertrecordfix.php
 
-tt_content.shortcut.20.0.source.override.cObject = COA
-tt_content.shortcut.20.0.source.override.cObject {
+tt_content.shortcut.20.source.override.cObject = COA
+tt_content.shortcut.20.source.override.cObject {
 	stdWrap.if.isTrue.data = TSFE:sys_language_uid
 	
 	10 = USER
@@ -9,4 +9,7 @@ tt_content.shortcut.20.0.source.override.cObject {
 		userFunc = user_insertrecordfix->insertrecordfix
 	}
 	
-} 
+}
+
+page.99 = TEXT
+page.99.value = LALALA
