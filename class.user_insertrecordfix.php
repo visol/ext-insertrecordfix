@@ -38,17 +38,18 @@ class user_insertrecordfix {
 	 * @return string modificated list
 	 */
 	public function insertrecordfix($content, $conf) {
+
 		if ($GLOBALS['TSFE']->sys_language_uid == 0) {
 			return FALSE;
 		}
 
 		$newIds = array();
-		$idSplit = t3lib_div::trimExplode(',', $this->cObj->data['records'], TRUE);
+		$idSplit = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', $this->cObj->data['records'], TRUE);
 
-			// go through every item
+		// go through every item
 		foreach ($idSplit as $oldId) {
-				// split tt_content_123 into array('tt_content', 123)
-			$tableIdSplit = t3lib_befunc::splitTable_Uid($oldId);
+			// split tt_content_123 into array('tt_content', 123)
+			$tableIdSplit = \TYPO3\CMS\Backend\Utility\BackendUtility::splitTable_Uid($oldId);
 
 			$oldId = (int) $tableIdSplit[1];
 			if ($oldId > 0) {
@@ -56,7 +57,7 @@ class user_insertrecordfix {
 								'uid', $tableIdSplit[0], 'l18n_parent=' . $oldId . ' AND sys_language_uid=' . $GLOBALS['TSFE']->sys_language_uid . $this->cObj->enableFields($tableIdSplit[0])
 				);
 
-					// if a translation is found, override default
+				// if a translation is found, override default
 				if (is_array($translatedRecord[0])) {
 					$oldId = $translatedRecord[0]['uid'];
 				}
@@ -69,7 +70,5 @@ class user_insertrecordfix {
 
 }
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/insertrecordfix/class.user_insertrecordfix.php']) {
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/insertrecordfix/class.user_insertrecordfix.php']);
-}
+
 ?>
