@@ -1,0 +1,12 @@
+includeLibs.insertrecordfix = EXT:insertrecordfix/class.user_insertrecordfix.php
+
+tt_content.shortcut.20.0.source.override.cObject = COA
+tt_content.shortcut.20.0.source.override.cObject {
+	stdWrap.if.isTrue.data = TSFE:sys_language_uid
+	
+	10 = USER
+	10 {
+		userFunc = user_insertrecordfix->insertrecordfix
+	}
+	
+} 
