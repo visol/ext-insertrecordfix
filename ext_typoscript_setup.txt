@@ -10,6 +10,3 @@ tt_content.shortcut.20.source.override.cObject {
 	}
 	
 }
-
-page.99 = TEXT
-page.99.value = LALALA
