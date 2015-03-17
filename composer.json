@@ -1,0 +1,11 @@
+{
+	"name": "visol/insertrecordfix",
+	"type": "typo3-cms-extension",
+	"description": "l10n fix for insert record content element",
+	"homepage": "https://github.com/visol/ext-insertrecordfix.git",
+	"license": ["GPL-2.0+"],
+	"version": "1.0.0",
+	"require": {
+		"typo3/cms-core": ">= 6.2.0, <= 7.99.99"
+	}
+}
